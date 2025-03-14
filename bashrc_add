@@ -1,0 +1,37 @@
+#!/bin/bash
+#
+#   ~/.bashrc
+#
+
+HISTCONTROL=ignoredups           # Ignores dupes in the history
+CLICOLOR=1
+
+##
+## Aliases
+##
+
+# No kerberos for telnet
+telnet_opts='-K'
+alias telnet="telnet $telnet_opts"
+
+# Make use of ssh-agent and load keys prior to calling ssh and related apps
+if [ -x /usr/bin/keychain -o -x /opt/homebrew/bin/keychain ]; then
+    if [ -d ~/.ssh/keys ]; then
+        keys="$keys $(find ~/.ssh/keys -type f -not -name '*.pub')"
+        eval `keychain --timeout 240 --eval --agents ssh $keys`
+    fi
+fi
+
+##
+## Bash prompt
+##
+## General bash PS1 and PROMPT_COMMAND info
+##   https://wiki.archlinux.org/index.php/Bash/Prompt_customization#Embedding_commands
+##
+
+# Source our various functions
+[ -f ~/.bash/prompt-command.bash ]  && source ~/.bash/prompt-command.bash
+[ -f ~/.bash/git-prompt.bash ]      && source ~/.bash/git-prompt.bash
+
+# Set PROMPT_COMMAND
+[ -n "$(declare -F __my_prompt_command)" ] && PROMPT_COMMAND='__my_prompt_command'
