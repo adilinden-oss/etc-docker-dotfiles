@@ -94,7 +94,7 @@ echo "|                                                                 |"
 #echo "|                                                                 |"
 #echo -e "|      "'\033[0;32m'"if [ -f ~/.bashrc_add ]; then . ~/.bashrc_add; fi"'\033[0m'"          |"
 echo "|   Check on .bashrc and .bash_profile depending on the system.   |"
-echo "|   Install `keychain` using brew or apt to manage passphrases.   |"
+echo "|   Install \`keychain\` using brew or apt to manage passphrases.   |"
 echo "|                                                                 |"
 echo "+=================================================================+"
 
