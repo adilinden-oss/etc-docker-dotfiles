@@ -96,6 +96,11 @@ echo "|                                                                 |"
 echo "|   Check on .bashrc and .bash_profile depending on the system.   |"
 echo "|   Install \`keychain\` using brew or apt to manage passphrases.   |"
 echo "|                                                                 |"
+echo "|   Add this to \`.gitconfig\`:                                     |"
+echo "|                                                                 |"
+echo "|   [include]                                                     |"
+echo "|       path = ~/.gitconfig_add                                   |"
+echo "|                                                                 |"
 echo "+=================================================================+"
 
 # End

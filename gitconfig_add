@@ -1,13 +1,6 @@
-[core]
-	excludesfile = ~/.gitignore_global
 # Use traditional credentials cache for https, with 5 minute timeout
 [credential]
 	helper = cache --timeout=300
-[user]
-	name = Adi Linden
-	email = adi@adis.ca
-[github]
-	user = adilinden
 [color]
 	ui = true
 [alias]
@@ -23,17 +16,3 @@
     lg2-specific = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%ad%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --date=format:'%Y-%m-%d %H:%M:%S'
     lg3-specific = log --graph --abbrev-commit --decorate --date=format:'%Y-%m-%d %H:%M:%S' --format=format:'%C(bold blue)%h%C(reset) %C(bold yellow)%d%C(reset)%n''    %C(bold cyan)%ad%C(reset) %C(bold green)(%ar)%C(reset) %C(dim white)- %an%C(reset)%n''    %C(white)%<(70,trunc)%s%C(reset)'
 
-# Condition KiCad files for git revision control
-# Instructions per https://jnavila.github.io/plotkicadsch/
-#
-# Requires the following in .gitattribute for each KiCad repo
-#
-#     *.pro filter=kicad_project
-#     *.sch filter=kicad_sch
-#
-[filter "kicad_project"]
-	clean = sed -E 's/^update=.*$/update=Date/'
-	smudge = cat
-[filter "kicad_sch"]
-	clean = "sed -E 's/#(PWR|FLG)[0-9]+/#\\1?/'"
-	smudge = cat
