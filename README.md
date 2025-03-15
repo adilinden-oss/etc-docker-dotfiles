@@ -17,3 +17,5 @@ Initialize dotfiles
 
     cd .etc-dotfiles
     ./makelinks.sh
+
+Log out and log back in to see the changes applied to the new bash session.
