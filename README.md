@@ -4,7 +4,7 @@
 
 To have a `bash` prompt that is responsive to git, install `etc-dotfiles` into the home directory.
 
-    git clone https://github.com/knetca/etc-dotfiles.git .etc-dotfiles
+    git clone https://github.com/adilinden-oss/etc-docker-dotfiles.git .etc-dotfiles
 
 Add this to `~/.gitconfig`:
 
