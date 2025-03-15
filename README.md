@@ -1,4 +1,4 @@
-# K-Net Dotfiles For Servers
+# Dotfiles For Docker Hosts
 
 ... and Desktop too
 
